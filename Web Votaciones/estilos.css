@@ -1,0 +1,72 @@
+body {
+    background-color: #191F35; /* Azul oscuro */
+    color: #fff; /* Texto blanco */
+    font-family: Arial, sans-serif;
+}
+
+.chart-container {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    padding-top: 50px;
+    position: relative;
+}
+
+.pie-chart {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    background: conic-gradient(
+        /* Los colores y ángulos se insertarán aquí desde el PHP */
+    );
+    position: relative;
+    animation: pieChartAnimation 2s ease-out forwards;
+}
+
+.pie-chart::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    background-color: #191F35; /* Color del fondo del body */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Asegura que el círculo central esté sobre el gráfico */
+}
+
+@keyframes pieChartAnimation {
+    from {
+        background: conic-gradient(
+            transparent 0%,
+            transparent 100%
+        );
+    }
+    to {
+        background: conic-gradient(
+            /* Los colores y ángulos se insertarán aquí desde el PHP */
+        );
+    }
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9800, 0 0 40px #ff9800, 0 0 50px #ff9800, 0 0 60px #ff9800, 0 0 70px #ff9800; /* Efecto fluorescente */
+}
+
+.label {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 0.8em;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
